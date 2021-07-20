@@ -1,0 +1,70 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "fdf015c37fd8232a9b65ec4e9b01f3fc",
+    "entities": [
+      {
+        "tableName": "rundb",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `icon` BLOB, `avgSpeedKHM` REAL NOT NULL, `distance` INTEGER NOT NULL, `timeStamp` INTEGER NOT NULL, `timeInMillis` INTEGER NOT NULL, `caloriesBurn` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "icon",
+            "columnName": "icon",
+            "affinity": "BLOB",
+            "notNull": false
+          },
+          {
+            "fieldPath": "avgSpeedKHM",
+            "columnName": "avgSpeedKHM",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distance",
+            "columnName": "distance",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeStamp",
+            "columnName": "timeStamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeInMillis",
+            "columnName": "timeInMillis",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "caloriesBurn",
+            "columnName": "caloriesBurn",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fdf015c37fd8232a9b65ec4e9b01f3fc')"
+    ]
+  }
+}
